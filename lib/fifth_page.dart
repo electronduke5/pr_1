@@ -11,247 +11,251 @@ class FifthPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: whiteSmokeBackground,
-      body: Column(
-        children: [
-          Expanded(
-            child: SingleChildScrollView(
-              physics: const BouncingScrollPhysics(
-                  parent: AlwaysScrollableScrollPhysics()),
-              child: Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(20.0),
-                    child: Column(
-                      children: [
-                        Row(
-                          //TODO: Первая строка с именем пользователя и кнопками поиска и уведомленйи
+      body: SafeArea(
+        child: Column(
+          children: [
+            Expanded(
+              child: SingleChildScrollView(
+                physics: const BouncingScrollPhysics(
+                    parent: AlwaysScrollableScrollPhysics()),
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(left: 20.0, right: 20, top:10, bottom: 20),
+                      child: Column(
+                        children: [
+                          Row(
+                            //TODO: Первая строка с именем пользователя и кнопками поиска и уведомленйи
 
-                          children: [
-                            CircleAvatar(
-                              child: Image.asset(
-                                "assets/images/avatar6_main.png",
-                                width: 45,
-                                height: 45,
+                            children: [
+                              CircleAvatar(
+                                child: Image.asset(
+                                  "assets/images/avatar6_main.png",
+                                  width: 45,
+                                  height: 45,
+                                ),
                               ),
-                            ),
-                            Expanded(
-                              child: Padding(
-                                padding: const EdgeInsets.only(left: 15.0),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: const [
-                                    Text("Good Evening!",
-                                        style:
-                                            FifthPageColor.secondaryTextStyle),
-                                    Text(
-                                      "Dan Smith",
-                                      style: TextStyle(
-                                          fontFamily: "WorkSans",
-                                          fontSize: 20,
-                                          fontWeight: FontWeight.bold,
-                                          color:
-                                              FifthPageColor.primaryTextColor),
+                              Expanded(
+                                child: Padding(
+                                  padding: const EdgeInsets.only(left: 15.0),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: const [
+                                      Text("Good Evening!",
+                                          style:
+                                              FifthPageColor.secondaryTextStyle),
+                                      Text(
+                                        "Dan Smith",
+                                        style: TextStyle(
+                                            fontFamily: "WorkSans",
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.bold,
+                                            color:
+                                                FifthPageColor.primaryTextColor),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                              Ink(
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  border: Border.all(
+                                    color: FifthPageColor.borderColor,
+                                    width: 1,
+                                  ),
+                                ),
+                                child: IconButton(
+                                  onPressed: () {
+                                    Navigator.of(context).pushNamed('/MenuPage');
+                                  },
+                                  icon: const Icon(
+                                    CustomIcons.search,
+                                    size: 20,
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 8.0),
+                                child: Stack(
+                                  children: [
+                                    Ink(
+                                      decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        border: Border.all(
+                                          color: FifthPageColor.borderColor,
+                                          width: 1,
+                                        ),
+                                      ),
+                                      child: IconButton(
+                                        onPressed: () {},
+                                        icon: const Icon(
+                                          CustomIcons.bell,
+                                          size: 20,
+                                        ),
+                                      ),
+                                    ),
+                                    Positioned(
+                                      right: 16,
+                                      bottom: 13,
+                                      top: 1,
+                                      child: Container(
+                                        width: 7,
+                                        height: 7,
+                                        decoration: const BoxDecoration(
+                                            shape: BoxShape.circle,
+                                            color: FifthPageColor
+                                                .avatarBackgroundColor),
+                                      ),
                                     ),
                                   ],
                                 ),
                               ),
-                            ),
-                            Ink(
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                border: Border.all(
-                                  color: FifthPageColor.borderColor,
-                                  width: 1,
-                                ),
-                              ),
-                              child: IconButton(
-                                onPressed: () {},
-                                icon: const Icon(
-                                  CustomIcons.search,
-                                  size: 20,
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(left: 8.0),
-                              child: Stack(
+                            ],
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 25.0),
+                            child: IntrinsicHeight(
+                              child: Row(
+                                //TODO: Вторая строка с My Weekly Tasks
                                 children: [
-                                  Ink(
-                                    decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      border: Border.all(
-                                        color: FifthPageColor.borderColor,
-                                        width: 1,
-                                      ),
+                                  Expanded(
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: const [
+                                        Text(
+                                          "My Weekly Tasks",
+                                          style: FifthPageColor.mainTextStyle,
+                                        ),
+                                        Padding(
+                                          padding: EdgeInsets.only(top: 7.0),
+                                          child: Text(
+                                            "18 Tasks Pending",
+                                            style:
+                                                FifthPageColor.secondaryTextStyle,
+                                          ),
+                                        ),
+                                      ],
                                     ),
-                                    child: IconButton(
+                                  ),
+                                  IconButton(
+                                      splashRadius: 20,
+                                      iconSize: 20,
                                       onPressed: () {},
-                                      icon: const Icon(
-                                        CustomIcons.bell,
-                                        size: 20,
-                                      ),
-                                    ),
+                                      icon: const Icon(CustomIcons.settings)),
+                                  const VerticalDivider(
+                                    indent: 7,
+                                    endIndent: 7,
+                                    thickness: 1,
+                                    color: FifthPageColor.dividerColor,
                                   ),
-                                  Positioned(
-                                    right: 16,
-                                    bottom: 13,
-                                    top: 1,
-                                    child: Container(
-                                      width: 7,
-                                      height: 7,
-                                      decoration: const BoxDecoration(
-                                          shape: BoxShape.circle,
-                                          color: FifthPageColor
-                                              .avatarBackgroundColor),
-                                    ),
-                                  ),
+                                  IconButton(
+                                      splashRadius: 20,
+                                      iconSize: 17,
+                                      onPressed: () {},
+                                      icon: const Icon(CustomIcons.plus)),
                                 ],
                               ),
                             ),
-                          ],
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 25.0),
-                          child: IntrinsicHeight(
+                          ),
+                          SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            physics: const BouncingScrollPhysics(
+                                parent: AlwaysScrollableScrollPhysics()),
                             child: Row(
-                              //TODO: Вторая строка с My Weekly Tasks
+                              //TODO: Третья строка с карточками заданий (Возможно нужно использвоать Expanded)
                               children: [
-                                Expanded(
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: const [
-                                      Text(
-                                        "My Weekly Tasks",
-                                        style: FifthPageColor.mainTextStyle,
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsets.only(top: 7.0),
-                                        child: Text(
-                                          "18 Tasks Pending",
-                                          style:
-                                              FifthPageColor.secondaryTextStyle,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                IconButton(
-                                    splashRadius: 20,
-                                    iconSize: 20,
-                                    onPressed: () {},
-                                    icon: const Icon(CustomIcons.settings)),
-                                const VerticalDivider(
-                                  indent: 7,
-                                  endIndent: 7,
-                                  thickness: 1,
-                                  color: FifthPageColor.dividerColor,
-                                ),
-                                IconButton(
-                                    splashRadius: 20,
-                                    iconSize: 17,
-                                    onPressed: () {},
-                                    icon: const Icon(CustomIcons.plus)),
+                                weeklyTaskCard(
+                                    "UI/UX Design",
+                                    "High",
+                                    "Create a Landing Page",
+                                    "Mon, 12 July 2022",
+                                    "assets/images/avatar7.png",
+                                    "assets/images/avatar8.png",
+                                    "3+"),
+                                weeklyTaskCard(
+                                    "Development",
+                                    "Low",
+                                    "Develop a Website",
+                                    "Mon, 30 July 2022",
+                                    "assets/images/avatar3.1.png",
+                                    "assets/images/avatar9.png",
+                                    "2+"),
                               ],
                             ),
                           ),
-                        ),
-                        SingleChildScrollView(
-                          scrollDirection: Axis.horizontal,
-                          physics: const BouncingScrollPhysics(
-                              parent: AlwaysScrollableScrollPhysics()),
-                          child: Row(
-                            //TODO: Третья строка с карточками заданий (Возможно нужно использвоать Expanded)
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 25.0),
+                            child: IntrinsicHeight(
+                              child: Row(
+                                //TODO: Четвертая строка с Todays Tasks
+                                children: [
+                                  Expanded(
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: const [
+                                        Text(
+                                          "Today's Tasks",
+                                          style: FifthPageColor.mainTextStyle,
+                                        ),
+                                        Padding(
+                                          padding: EdgeInsets.only(top: 7.0),
+                                          child: Text(
+                                            "18 Tasks Pending",
+                                            style:
+                                                FifthPageColor.secondaryTextStyle,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  IconButton(
+                                      splashRadius: 20,
+                                      iconSize: 20,
+                                      onPressed: () {},
+                                      icon: const Icon(CustomIcons.settings)),
+                                  const VerticalDivider(
+                                    indent: 7,
+                                    endIndent: 7,
+                                    thickness: 1,
+                                    color: FifthPageColor.dividerColor,
+                                  ),
+                                  IconButton(
+                                      splashRadius: 20,
+                                      iconSize: 17,
+                                      onPressed: () {},
+                                      icon: const Icon(CustomIcons.plus)),
+                                ],
+                              ),
+                            ),
+                          ),
+                          Column(
+                            //TODO: Строка с карточками заданий (Expanded). Она жолжна быть до самого низа и прокручиваться,
                             children: [
-                              weeklyTaskCard(
-                                  "UI/UX Design",
-                                  "High",
-                                  "Create a Landing Page",
-                                  "Mon, 12 July 2022",
-                                  "assets/images/avatar7.png",
-                                  "assets/images/avatar8.png",
-                                  "3+"),
-                              weeklyTaskCard(
-                                  "Development",
-                                  "Low",
-                                  "Develop a Website",
-                                  "Mon, 30 July 2022",
-                                  "assets/images/avatar3.1.png",
-                                  "assets/images/avatar9.png",
-                                  "2+"),
+                              todayTaskWidget(
+                                  "Design 2 App Screens",
+                                  "Crypto Wallet App",
+                                  true,
+                                  "Mon, 10 July 2022"),
+                              todayTaskWidget(
+                                  "Design Homepage",
+                                  "Water Company Website",
+                                  false,
+                                  "Mon, 15 July 2022"),
                             ],
                           ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 25.0),
-                          child: IntrinsicHeight(
-                            child: Row(
-                              //TODO: Четвертая строка с Todays Tasks
-                              children: [
-                                Expanded(
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: const [
-                                      Text(
-                                        "Today's Tasks",
-                                        style: FifthPageColor.mainTextStyle,
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsets.only(top: 7.0),
-                                        child: Text(
-                                          "18 Tasks Pending",
-                                          style:
-                                              FifthPageColor.secondaryTextStyle,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                IconButton(
-                                    splashRadius: 20,
-                                    iconSize: 20,
-                                    onPressed: () {},
-                                    icon: const Icon(CustomIcons.settings)),
-                                const VerticalDivider(
-                                  indent: 7,
-                                  endIndent: 7,
-                                  thickness: 1,
-                                  color: FifthPageColor.dividerColor,
-                                ),
-                                IconButton(
-                                    splashRadius: 20,
-                                    iconSize: 17,
-                                    onPressed: () {},
-                                    icon: const Icon(CustomIcons.plus)),
-                              ],
-                            ),
-                          ),
-                        ),
-                        Column(
-                          //TODO: Строка с карточками заданий (Expanded). Она жолжна быть до самого низа и прокручиваться,
-                          children: [
-                            todayTaskWidget(
-                                "Design 2 App Screens",
-                                "Crypto Wallet App",
-                                true,
-                                "Mon, 10 July 2022"),
-                            todayTaskWidget(
-                                "Design Homepage",
-                                "Water Company Website",
-                                false,
-                                "Mon, 15 July 2022"),
-                          ],
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
-          ),
-          customBottomNav(),
-        ],
+            customBottomNav(),
+          ],
+        ),
       ),
     );
   }
