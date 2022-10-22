@@ -25,6 +25,14 @@ class DesignPageColors {
   static const blue = Color(0xFF304FFE);
 }
 
+class ProfilePageColors {
+  static const primaryVioletColor = Color(0xFF7685FF);
+  static const onVioletColor = Color.fromRGBO(82, 101, 255, 0.1);
+  static const textColor = Color(0xFF09101D);
+  static const secondaryTextColor = Color(0xFF2C3A4B);
+  static const dividerColor = Color(0xFFEBEEF2);
+}
+
 class MenuPageColors {
   static const primaryPinkColor = Color(0xFFF43F5E);
   static const onPrimaryPinkColor = Color.fromRGBO(244, 63, 94, 0.1);
@@ -33,6 +41,7 @@ class MenuPageColors {
   static const secondaryTextColor = Color(0xFF858C94);
   static const shadowColor = Color.fromRGBO(90, 108, 234, 0.1);
 }
+
 class FifthPageColor {
   static const textColorDesign = Color.fromRGBO(142, 97, 233, 1);
   static const backgroundColorDesign = Color.fromRGBO(142, 97, 233, 0.1);
@@ -62,64 +71,63 @@ class FifthPageColor {
     fontSize: 18.0,
     fontFamily: "WorkSans",
     fontWeight: FontWeight.w600,
-
   );
   static const secondaryTextStyle = TextStyle(
     color: secondaryTextColor,
     fontSize: 12.0,
     fontFamily: "WorkSans",
-
   );
 
   static const bottomNavTextStyle = TextStyle(
     color: bottomNavBarTextColor,
     fontSize: 12.0,
     fontFamily: "WorkSans",
-
   );
 }
 
 final ButtonStyle signInButtonStyle = ElevatedButton.styleFrom(
+  foregroundColor: Colors.black,
+  backgroundColor: Colors.white,
   shape: const RoundedRectangleBorder(
     borderRadius: BorderRadius.all(Radius.circular(100.0)),
   ),
-  primary: Colors.white, //background
-  onPrimary: Colors.black, //foreground
   minimumSize: const Size(350, 50),
 );
 
 final ButtonStyle continueButtonStyle = ElevatedButton.styleFrom(
   //padding: const EdgeInsets.symmetric(horizontal: 60.0, vertical: 15.0),
+  foregroundColor: Colors.black,
+  backgroundColor: startPageBackButton,
   shape: const RoundedRectangleBorder(
     borderRadius: BorderRadius.all(Radius.circular(100.0)),
   ),
-  primary: startPageBackButton, //background
-  onPrimary: Colors.black, //foreground
+  //foreground
   minimumSize: const Size(350, 50),
 );
 
 final ButtonStyle nextSessionButtonStyle = ElevatedButton.styleFrom(
   //padding: const EdgeInsets.symmetric(horizontal: 60.0, vertical: 15.0),
+  foregroundColor: Colors.white,
+  backgroundColor: startPageBackground,
   shape: const RoundedRectangleBorder(
     borderRadius: BorderRadius.all(Radius.circular(100.0)),
   ),
-  primary: startPageBackground, //background
-  onPrimary: Colors.white, //foreground
   minimumSize: const Size(350, 50),
 );
 
 final ButtonStyle outlineFollowButtonStyle = OutlinedButton.styleFrom(
     //padding: const EdgeInsets.symmetric(horizontal: 60.0, vertical: 15.0),
+    foregroundColor: orangePlayButton,
     shape: const RoundedRectangleBorder(
       borderRadius: BorderRadius.all(Radius.circular(8.0)),
     ),
-    primary: orangePlayButton,
     side: const BorderSide(
       color: orangePlayButton,
     ),
     padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 40));
 
-final ButtonStyle textButtonStyle = TextButton.styleFrom(primary: Colors.white);
+final ButtonStyle textButtonStyle =
+    TextButton.styleFrom(foregroundColor: Colors.white);
 
 const TextStyle btnStartTextStyle = TextStyle(
   fontSize: 16.0,

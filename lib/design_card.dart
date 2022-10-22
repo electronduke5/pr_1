@@ -157,7 +157,9 @@ class DesignPage extends StatelessWidget {
                               BorderRadius.all(Radius.circular(32.0)),
                             ),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.of(context).pushNamed('/ProfilePage');
+                          },
                           child: Text(
                             'Enroll - \$24.99',
                             style: GoogleFonts.sourceSansPro(
