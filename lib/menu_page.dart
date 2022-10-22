@@ -43,7 +43,7 @@ class MenuPage extends StatelessWidget {
                   Row(
                     children: [
                       _searchField(),
-                      _sortButton(),
+                      _sortButton(context),
                     ],
                   ),
                   //Строка со всеми едами
@@ -88,7 +88,7 @@ class MenuPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
-                padding: EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
                     color: MenuPageColors.onPrimaryPinkColor,
                     borderRadius: BorderRadius.circular(12)),
@@ -187,7 +187,7 @@ class MenuPage extends StatelessWidget {
     );
   }
 
-  Padding _sortButton() {
+  Padding _sortButton(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: ElevatedButton(
@@ -200,7 +200,9 @@ class MenuPage extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
             ),
           ),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(context).pushNamed('/DesignPage');
+          },
           child: const Icon(
             Icons.sort,
             color: MenuPageColors.primaryPinkColor,

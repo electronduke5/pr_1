@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:pr_1/design_card.dart';
 import 'package:pr_1/menu_page.dart';
 import 'package:pr_1/second_page.dart';
 import 'package:pr_1/start_page.dart';
@@ -33,6 +34,7 @@ class MyApp extends StatelessWidget {
         '/FourthPage': (BuildContext context) => const FourthPage(),
         '/FifthPage': (BuildContext context) => const FifthPage(),
         '/MenuPage': (BuildContext context) => const MenuPage(),
+        '/DesignPage': (BuildContext context) => const DesignPage(),
       },
     );
   }

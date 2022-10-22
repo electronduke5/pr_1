@@ -16,8 +16,16 @@ const yellowCardBackground = Color.fromRGBO(248, 217, 16, 1);
 const darkViolet = Color.fromRGBO(38, 32, 68, 1);
 const darkVioletDown = Color.fromRGBO(29, 15, 90, 1);
 const orangeLiveColor = Color.fromRGBO(242, 78, 30, 1);
-class MenuPageColors {
 
+class DesignPageColors {
+  static const primaryVioletColor = Color(0xFF6D5FFD);
+  static const onVioletColor = Color.fromRGBO(48, 79, 254, 0.1);
+  static const textColor = Color(0xFF09101D);
+  static const secondaryTextColor = Color(0xFF2C3A4B);
+  static const blue = Color(0xFF304FFE);
+}
+
+class MenuPageColors {
   static const primaryPinkColor = Color(0xFFF43F5E);
   static const onPrimaryPinkColor = Color.fromRGBO(244, 63, 94, 0.1);
   static const searchBackgroundColor = Color(0xFFF4F6F9);
