@@ -48,7 +48,10 @@ class StartPage extends StatelessWidget {
                           padding: const EdgeInsets.only(top: 12.0),
                           child: ElevatedButton(
                             style: continueButtonStyle,
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pushNamed(
+                                  context, '/MenuPage');
+                            },
                             child: const Text(
                               "Continue with Email or Phone",
                               style: btnStartTextStyle,

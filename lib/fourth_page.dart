@@ -11,6 +11,7 @@ class FourthPage extends StatelessWidget {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         elevation: 0,
         backgroundColor: Colors.transparent,
         title: Padding(
@@ -21,7 +22,9 @@ class FourthPage extends StatelessWidget {
               color: Colors.white.withOpacity(0.7),
             ),
             child: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
               icon: const Icon(
                 Icons.arrow_back,
                 color: Colors.black,
