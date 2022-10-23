@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pr_1/design_card.dart';
+import 'package:pr_1/eWallet_page.dart';
 import 'package:pr_1/menu_page.dart';
 import 'package:pr_1/pomodoro_page.dart';
 import 'package:pr_1/profile_page.dart';
@@ -37,6 +38,7 @@ class MyApp extends StatelessWidget {
         '/DesignPage': (BuildContext context) => const DesignPage(),
         '/ProfilePage': (BuildContext context) => const ProfilePage(),
         '/PomodoroPage': (BuildContext context) => const PomodoroPage(),
+        '/EWalletPage': (BuildContext context) => const EWalletPage(),
       },
     );
   }

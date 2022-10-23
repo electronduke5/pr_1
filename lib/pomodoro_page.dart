@@ -78,7 +78,9 @@ class PomodoroPage extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(25)),
                               backgroundColor: PomodoroPageColors.primaryColor,
                             ),
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.of(context).pushNamed('/EWalletPage');
+                            },
                             child: Text(
                               'View Statistics',
                               style: GoogleFonts.urbanist(
