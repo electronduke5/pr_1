@@ -17,6 +17,12 @@ const darkViolet = Color.fromRGBO(38, 32, 68, 1);
 const darkVioletDown = Color.fromRGBO(29, 15, 90, 1);
 const orangeLiveColor = Color.fromRGBO(242, 78, 30, 1);
 
+class PomodoroPageColors {
+  static const primaryColor = Color.fromRGBO(255, 87, 92, 1);
+  static const onPrimaryColor = Color.fromRGBO(255, 238, 239, 1);
+
+}
+
 class DesignPageColors {
   static const primaryVioletColor = Color(0xFF6D5FFD);
   static const onVioletColor = Color.fromRGBO(48, 79, 254, 0.1);

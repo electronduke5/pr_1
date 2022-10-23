@@ -82,7 +82,7 @@ class ProfilePage extends StatelessWidget {
                     color: ProfilePageColors.dividerColor,
                   ),
                 ),
-                _rowWithMainButtons(),
+                _rowWithMainButtons(context),
                 const Padding(
                   padding: EdgeInsets.symmetric(vertical: 24.0),
                   child: Divider(
@@ -194,7 +194,7 @@ class ProfilePage extends StatelessWidget {
     );
   }
 
-  Row _rowWithMainButtons() {
+  Widget _rowWithMainButtons(BuildContext context) {
     return Row(
       children: [
         Expanded(
@@ -209,7 +209,9 @@ class ProfilePage extends StatelessWidget {
                   borderRadius: BorderRadius.all(Radius.circular(32.0)),
                 ),
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushNamed('/PomodoroPage');
+              },
               icon: const Icon(Icons.person_add_alt_1, size: 18),
               label: Text(
                 'Follow',
